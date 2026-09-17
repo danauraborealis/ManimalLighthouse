@@ -45,7 +45,8 @@ public sealed class LighthouseLocationBackport(LocationTable locations, Template
             throw new InvalidDataException("Lighthouse item registration must complete before location activation.");
         }
 
-        var replacement = LighthouseLocationData.Read(root, manifest, json, templates.Items);
+        var baseline = Manimal.MapBackport.LegacyLootCompatibility.ReadBaseline(json, "lighthouse");
+        var replacement = LighthouseLocationData.Read(root, manifest, json, templates.Items, baseline);
         var btr = LighthouseBtr.Read(json);
 
         cancellationToken.ThrowIfCancellationRequested();

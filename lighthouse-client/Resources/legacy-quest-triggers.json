@@ -1,0 +1,238 @@
+[
+  {
+    "Id": "Path_mountains_1",
+    "Path": "QUESTS/BTRQuest/Path_mountains_1"
+  },
+  {
+    "Id": "Path_mountains_2",
+    "Path": "QUESTS/BTRQuest/Path_mountains_2"
+  },
+  {
+    "Id": "Path_mountains_3",
+    "Path": "QUESTS/BTRQuest/Path_mountains_3"
+  },
+  {
+    "Id": "Path_mountains_4",
+    "Path": "QUESTS/BTRQuest/Path_mountains_4"
+  },
+  {
+    "Id": "Halloween_zone_for_antivirus(lighthouse)",
+    "Path": "QUESTS/Halloween_zone_for_antivirus(lighthouse)"
+  },
+  {
+    "Id": "Mark_transits_lighthouse",
+    "Path": "QUESTS/Mark_transits_lighthouse"
+  },
+  {
+    "Id": "zone_ball",
+    "Path": "QUESTS/Streamer_case/zone_ball"
+  },
+  {
+    "Id": "zone_bonfire",
+    "Path": "QUESTS/Streamer_case/zone_bonfire"
+  },
+  {
+    "Id": "zone_rick_and_morty",
+    "Path": "QUESTS/Streamer_case/zone_rick_and_morty"
+  },
+  {
+    "Id": "zone_welcome_silient_hill",
+    "Path": "QUESTS/Streamer_case/zone_welcome_silient_hill"
+  },
+  {
+    "Id": "em_quest5_1",
+    "Path": "QUESTS/em_quest5_1 (1)"
+  },
+  {
+    "Id": "em_quest5_1",
+    "Path": "QUESTS/em_quest5_1 (2)"
+  },
+  {
+    "Id": "em_quest5_1",
+    "Path": "QUESTS/em_quest5_1 (3)"
+  },
+  {
+    "Id": "em_quest5_1",
+    "Path": "QUESTS/em_quest5_1 (4)"
+  },
+  {
+    "Id": "em_quest5_1",
+    "Path": "QUESTS/em_quest5_1 (5)"
+  },
+  {
+    "Id": "em_quest5_2",
+    "Path": "QUESTS/em_quest5_1 (6)"
+  },
+  {
+    "Id": "em_quest5_1",
+    "Path": "QUESTS/em_quest5_1"
+  },
+  {
+    "Id": "em_quest5_2",
+    "Path": "QUESTS/em_quest5_2"
+  },
+  {
+    "Id": "meh_42_radio_area_mark_1",
+    "Path": "QUESTS/meh_42_radio_area_mark_1"
+  },
+  {
+    "Id": "meh_42_radio_area_mark_2",
+    "Path": "QUESTS/meh_42_radio_area_mark_2"
+  },
+  {
+    "Id": "meh_42_radio_area_mark_3",
+    "Path": "QUESTS/meh_42_radio_area_mark_3"
+  },
+  {
+    "Id": "meh_42_radio_area_mark_4",
+    "Path": "QUESTS/meh_42_radio_area_mark_4"
+  },
+  {
+    "Id": "meh_53_wificamera_area_mark_1",
+    "Path": "QUESTS/meh_53_wificamera_area_mark_1"
+  },
+  {
+    "Id": "meh_53_wificamera_area_mark_2",
+    "Path": "QUESTS/meh_53_wificamera_area_mark_2"
+  },
+  {
+    "Id": "meh_53_wificamera_area_mark_3",
+    "Path": "QUESTS/meh_53_wificamera_area_mark_3"
+  },
+  {
+    "Id": "meh_53_wificamera_area_mark_4",
+    "Path": "QUESTS/meh_53_wificamera_area_mark_4"
+  },
+  {
+    "Id": "place_flyers4",
+    "Path": "QUESTS/place_flyers4 (1)"
+  },
+  {
+    "Id": "place_flyers4",
+    "Path": "QUESTS/place_flyers4 (2)"
+  },
+  {
+    "Id": "place_flyers4",
+    "Path": "QUESTS/place_flyers4"
+  },
+  {
+    "Id": "q_ny_hide_christmas_tree_light",
+    "Path": "QUESTS/q_ny_hide_christmas_tree_light"
+  },
+  {
+    "Id": "qlight16_peace_terra",
+    "Path": "QUESTS/qlight16_peace_terra"
+  },
+  {
+    "Id": "qlight_extension_mechanik1_hide1",
+    "Path": "QUESTS/qlight_extension_mechanik1_hide1"
+  },
+  {
+    "Id": "qlight_extension_medic1_hide1",
+    "Path": "QUESTS/qlight_extension_medic1_hide1"
+  },
+  {
+    "Id": "qlight_fuel_blood_bezovoz1",
+    "Path": "QUESTS/qlight_fuel_blood_bezovoz1"
+  },
+  {
+    "Id": "qlight_fuel_blood_bezovoz2",
+    "Path": "QUESTS/qlight_fuel_blood_bezovoz2"
+  },
+  {
+    "Id": "qlight_fuel_blood_bezovoz3",
+    "Path": "QUESTS/qlight_fuel_blood_bezovoz3"
+  },
+  {
+    "Id": "qlight_fuel_blood",
+    "Path": "QUESTS/qlight_fuel_blood"
+  },
+  {
+    "Id": "qlight_mark_vech1",
+    "Path": "QUESTS/qlight_mark_vech1"
+  },
+  {
+    "Id": "qlight_mark_vech2",
+    "Path": "QUESTS/qlight_mark_vech2"
+  },
+  {
+    "Id": "qlight_mark_vech3",
+    "Path": "QUESTS/qlight_mark_vech3"
+  },
+  {
+    "Id": "qlight_mark_vech4",
+    "Path": "QUESTS/qlight_mark_vech4"
+  },
+  {
+    "Id": "qlight_pr1_heli1_mark",
+    "Path": "QUESTS/qlight_pr1_heli1_mark"
+  },
+  {
+    "Id": "quest_zone_place_c22_harley_1",
+    "Path": "QUESTS/quest_zone_place_c22_harley_1"
+  },
+  {
+    "Id": "quest_zone_place_c22_harley_2",
+    "Path": "QUESTS/quest_zone_place_c22_harley_2"
+  },
+  {
+    "Id": "w_race_cam1",
+    "Path": "QUESTS/w_race_cam1 (1)"
+  },
+  {
+    "Id": "w_race_cam1",
+    "Path": "QUESTS/w_race_cam1 (2)"
+  },
+  {
+    "Id": "w_race_cam1",
+    "Path": "QUESTS/w_race_cam1 (3)"
+  },
+  {
+    "Id": "w_race_cam1",
+    "Path": "QUESTS/w_race_cam1"
+  },
+  {
+    "Id": "w_race_cam2",
+    "Path": "QUESTS/w_race_cam2 (1)"
+  },
+  {
+    "Id": "w_race_cam2",
+    "Path": "QUESTS/w_race_cam2 (2)"
+  },
+  {
+    "Id": "w_race_cam2",
+    "Path": "QUESTS/w_race_cam2 (3)"
+  },
+  {
+    "Id": "w_race_cam2",
+    "Path": "QUESTS/w_race_cam2 (4)"
+  },
+  {
+    "Id": "w_race_cam2",
+    "Path": "QUESTS/w_race_cam2"
+  },
+  {
+    "Id": "w_race_cam3",
+    "Path": "QUESTS/w_race_cam3 (1)"
+  },
+  {
+    "Id": "w_race_cam3",
+    "Path": "QUESTS/w_race_cam3 (2)"
+  },
+  {
+    "Id": "w_race_cam3",
+    "Path": "QUESTS/w_race_cam3 (3)"
+  },
+  {
+    "Id": "w_race_cam3",
+    "Path": "QUESTS/w_race_cam3 (4)"
+  },
+  {
+    "Id": "w_race_cam3",
+    "Path": "QUESTS/w_race_cam3 (5)"
+  },
+  {
+    "Id": "w_race_cam3",
+    "Path": "QUESTS/w_race_cam3"
+  }
+]

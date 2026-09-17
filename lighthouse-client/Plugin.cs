@@ -65,6 +65,7 @@ public sealed class Plugin : BaseUnityPlugin
         new Patches.Ambience.InitPatch().Enable();
         LighthouseWaypointsCompatibility.EnableIfAvailable();
 
+        SceneManager.sceneLoaded += LighthouseQuestTriggers.SceneLoaded;
         SceneManager.sceneLoaded += LighthouseAmbience.SceneLoaded;
         SceneManager.sceneLoaded += LighthouseShaderRebind.SceneLoaded;
         SceneManager.sceneLoaded += LighthouseTestEnvironment.SceneLoaded;
@@ -82,6 +83,7 @@ public sealed class Plugin : BaseUnityPlugin
     private void OnDestroy()
     {
         SceneManager.sceneUnloaded -= LighthouseSceneLoader.SceneUnloaded;
+        SceneManager.sceneLoaded -= LighthouseQuestTriggers.SceneLoaded;
         SceneManager.sceneLoaded -= LighthouseAmbience.SceneLoaded;
         SceneManager.sceneLoaded -= LighthouseShaderRebind.SceneLoaded;
         SceneManager.sceneLoaded -= LighthouseTestEnvironment.SceneLoaded;

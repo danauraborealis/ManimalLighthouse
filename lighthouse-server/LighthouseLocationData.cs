@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using Manimal.Lighthouse.Shared;
 using SPTarkov.Server.Core.Models.Common;
 using SPTarkov.Server.Core.Models.Eft.Common;
@@ -21,7 +21,7 @@ public static class LighthouseLocationData
         "allExtracts.json"
     ];
 
-    public static Location Read(string root, ContentManifest manifest, JsonUtil json, Dictionary<MongoId, TemplateItem> templates)
+    public static Location Read(string root, ContentManifest manifest, JsonUtil json, Dictionary<MongoId, TemplateItem> templates, LooseLoot? baseline = null)
     {
         var texts = new Dictionary<string, string>(StringComparer.Ordinal);
 
@@ -52,7 +52,7 @@ public static class LighthouseLocationData
             texts.Add(name, text);
         }
 
-        _ = Parse<LooseLoot>("looseLoot.json");
+        _ = ReadLooseLoot();
         _ = Parse<StaticContainerDetails>("staticContainers.json");
 
         var loot = Parse<Dictionary<MongoId, StaticLootDetails>>("staticLoot.json");
@@ -68,7 +68,7 @@ public static class LighthouseLocationData
         return new Location
         {
             Base = Parse<LocationBase>("base.json"),
-            LooseLoot = new LazyLoad<LooseLoot>(() => Parse<LooseLoot>("looseLoot.json"), false),
+            LooseLoot = new LazyLoad<LooseLoot>(ReadLooseLoot, false),
             StaticContainers = new LazyLoad<StaticContainerDetails>(() => Parse<StaticContainerDetails>("staticContainers.json"), false),
             StaticLoot = new LazyLoad<Dictionary<MongoId, StaticLootDetails>>(() => Parse<Dictionary<MongoId, StaticLootDetails>>("staticLoot.json"), false),
             StaticAmmo = Parse<Dictionary<string, IEnumerable<StaticAmmoDetails>>>("staticAmmo.json"),
@@ -77,9 +77,14 @@ public static class LighthouseLocationData
         };
 
         T Parse<T>(string name) => json.Deserialize<T>(texts[name]) ?? throw new InvalidDataException("Null Lighthouse database: " + name);
+        LooseLoot ReadLooseLoot()
+        {
+            var loot = Parse<LooseLoot>("looseLoot.json");
+            return baseline is null ? loot : Manimal.MapBackport.LegacyLootCompatibility.Reconcile(loot, baseline, templates, json);
+        }
     }
 
-    private static void ValidateTemplates(JsonElement value, Dictionary<MongoId, TemplateItem> templates)
+    private static void ValidateTemplates(JsonElement value, Dictionary<MongoId, TemplateItem> templates, LooseLoot? baseline = null)
     {
         switch (value.ValueKind)
         {

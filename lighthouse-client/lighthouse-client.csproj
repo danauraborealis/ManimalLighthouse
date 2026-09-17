@@ -8,6 +8,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources/manimal_lighthouse_rain.bundle" LogicalName="Manimal.Lighthouse.Rain.bundle" />
     <EmbeddedResource Include="Resources/manimal_lighthouse_keeper.bundle" LogicalName="Manimal.Lighthouse.Keeper.bundle" />
+    <EmbeddedResource Include="Resources/legacy-quest-triggers.json" LogicalName="Manimal.Lighthouse.LegacyQuestTriggers.json" />
     <EmbeddedResource Include="Resources/keeper-restore.json" LogicalName="Manimal.Lighthouse.Keeper.json" />
   </ItemGroup>
   <ItemGroup>

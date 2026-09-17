@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
     <!-- Single source of truth for build and runtime plugin identity. -->
-    <ModVersion>1.0.4</ModVersion>
+    <ModVersion>1.0.5</ModVersion>
     <ModGuid>com.manimal.lighthouse</ModGuid>
     <ModUsername>Manimal</ModUsername>
     <ModDisplayName>LighthouseRework</ModDisplayName>
