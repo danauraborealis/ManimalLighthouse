@@ -21,6 +21,37 @@ public static class LighthouseLocationData
         "allExtracts.json"
     ];
 
+    // upstream 5.0 data names transits with tr_lighthouse_* locale keys that 4.1.5 doesnt ship,
+    // so they show as raw strings; the same ids have vanilla LIG_TRANSIT_* keys in every language
+    private static readonly Dictionary<int, string> VanillaTransitKeys = new()
+    {
+        [21] = "LIG_TRANSIT_21",
+        [22] = "LIG_TRANSIT_22",
+        [23] = "LIG_TRANSIT_23"
+    };
+
+    private static LocationBase UseVanillaTransitKeys(LocationBase location)
+    {
+        if (location.Transits is null)
+        {
+            return location;
+        }
+
+        foreach (var transit in location.Transits)
+        {
+            if (transit.Id is not int id || !VanillaTransitKeys.TryGetValue(id, out var key))
+            {
+                continue;
+            }
+
+            transit.Name = key;
+            transit.Description = key + "_DESC";
+            transit.Conditions = key + "_COND";
+        }
+
+        return location;
+    }
+
     public static Location Read(string root, ContentManifest manifest, JsonUtil json, Dictionary<MongoId, TemplateItem> templates, LooseLoot? baseline = null)
     {
         var texts = new Dictionary<string, string>(StringComparer.Ordinal);
@@ -67,7 +98,7 @@ public static class LighthouseLocationData
 
         return new Location
         {
-            Base = Parse<LocationBase>("base.json"),
+            Base = UseVanillaTransitKeys(Parse<LocationBase>("base.json")),
             LooseLoot = new LazyLoad<LooseLoot>(ReadLooseLoot, false),
             StaticContainers = new LazyLoad<StaticContainerDetails>(() => Parse<StaticContainerDetails>("staticContainers.json"), false),
             StaticLoot = new LazyLoad<Dictionary<MongoId, StaticLootDetails>>(() => Parse<Dictionary<MongoId, StaticLootDetails>>("staticLoot.json"), false),
