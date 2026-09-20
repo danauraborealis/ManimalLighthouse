@@ -16,6 +16,13 @@ namespace Manimal.Lighthouse.Client;
 
 internal static class LighthouseSceneLoader
 {
+    private static readonly HashSet<string> PresentationBundles = new(StringComparer.Ordinal)
+    {
+        "bundles/manimal_lighthouse_rendering.bundle",
+        "bundles/manimal_lighthouse_grass.bundle",
+        "bundles/manimal_lighthouse_water.bundle",
+    };
+
     private static readonly List<AssetBundle> Bundles = [];
     private static readonly HashSet<string> SceneNames = new(StringComparer.OrdinalIgnoreCase);
     private static readonly HashSet<string> NativeDonorScenes = new(StringComparer.OrdinalIgnoreCase);
@@ -156,7 +163,10 @@ internal static class LighthouseSceneLoader
                 throw new InvalidOperationException("Previous Lighthouse scenes are still loaded.");
             }
 
-            LighthouseShaderRebind.CaptureNativeShaders();
+            if (!LighthouseHeadless.Active)
+            {
+                LighthouseShaderRebind.CaptureNativeShaders();
+            }
 
             var available = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             var bundleIndex = 0;
@@ -164,6 +174,14 @@ internal static class LighthouseSceneLoader
             foreach (var entry in manifest.Bundles)
             {
                 operation._cancellationToken.ThrowIfCancellationRequested();
+
+                if (LighthouseHeadless.Active && PresentationBundles.Contains(entry.Path))
+                {
+                    bundleIndex++;
+                    preparation.Report(0.70f + 0.30f * bundleIndex / manifest.Bundles.Count);
+                    continue;
+                }
+
                 var bundleProgress = Cysharp.Threading.Tasks.Progress.Create<float>(value =>
                     preparation.Report(0.70f + 0.30f * (bundleIndex + value) / manifest.Bundles.Count));
                 // Unity cannot cancel this request. Own its result before honoring cancellation,
@@ -271,19 +289,23 @@ internal static class LighthouseSceneLoader
             }
 
             LighthouseAmbience.ValidateLoaded();
-            LighthouseShaderRebind.RebindAll();
-            LighthouseShaderRebind.ValidateTerrain();
-            LighthouseGrassBindings.Validate();
-            LighthouseWaterBindings.ValidateRenderer();
 
-            if (LighthouseWaterBindings.GroupCount != 0)
+            if (!LighthouseHeadless.Active)
             {
-                Plugin.Log.LogInfo("Lighthouse water: 2 groups, 7 surfaces registered with the native SPT renderer.");
-            }
+                LighthouseShaderRebind.RebindAll();
+                LighthouseShaderRebind.ValidateTerrain();
+                LighthouseGrassBindings.Validate();
+                LighthouseWaterBindings.ValidateRenderer();
 
-            if (LighthouseGrassBindings.ManagerCount != 0)
-            {
-                Plugin.Log.LogInfo(LighthouseGrassBindings.Diagnostics());
+                if (LighthouseWaterBindings.GroupCount != 0)
+                {
+                    Plugin.Log.LogInfo("Lighthouse water: 2 groups, 7 surfaces registered with the native SPT renderer.");
+                }
+
+                if (LighthouseGrassBindings.ManagerCount != 0)
+                {
+                    Plugin.Log.LogInfo(LighthouseGrassBindings.Diagnostics());
+                }
             }
 
             operation._cancellationToken.ThrowIfCancellationRequested();

@@ -145,7 +145,7 @@ internal static class LighthouseShaderRebind
 
     internal static void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (!LighthouseSceneLoader.Owns(scene.name))
+        if (LighthouseHeadless.Active || !LighthouseSceneLoader.Owns(scene.name))
         {
             return;
         }

@@ -74,6 +74,11 @@ internal static class LighthouseAmbience
 
     internal static bool BeforeLifecycle(MonoBehaviour __instance)
     {
+        if (LighthouseHeadless.Active)
+        {
+            return true;
+        }
+
         var scene = __instance.gameObject.scene.name;
         var donor = LighthouseSceneLoader.IsNativeAmbienceDonor(scene);
         var replacement = scene == ReplacementSound && LighthouseSceneLoader.Owns(scene);
@@ -110,6 +115,11 @@ internal static class LighthouseAmbience
 
     internal static void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (LighthouseHeadless.Active)
+        {
+            return;
+        }
+
         var donor = LighthouseSceneLoader.IsNativeAmbienceDonor(scene.name);
         var replacement = scene.name == ReplacementSound && LighthouseSceneLoader.Owns(scene.name);
 
@@ -180,7 +190,7 @@ internal static class LighthouseAmbience
 
     internal static void ValidateLoaded()
     {
-        if (!LighthouseSceneLoader.IsNativeAmbienceDonor("Lighthouse_Sound"))
+        if (LighthouseHeadless.Active || !LighthouseSceneLoader.IsNativeAmbienceDonor("Lighthouse_Sound"))
         {
             return;
         }

@@ -60,6 +60,7 @@ public sealed class Plugin : BaseUnityPlugin
         new Patches.Btr.InitBTRServerPatch().Enable();
         new Patches.Btr.InitBTROnClientPatch().Enable();
         new Patches.FrameStats.OnGameStartedPatch().Enable();
+        new Patches.Culling.CrossSceneSamplerStartPatch().Enable();
         LighthouseAmbience.Install();
 
         new Patches.Ambience.InitPatch().Enable();
