@@ -7,7 +7,7 @@ internal static class LighthousePadlockAudio
 {
     internal static void BeforePlay(HandlerPlaySoundAdvanced __instance, ref HandlerPlaySoundAdvanced.PlaySoundConfig __0)
     {
-        if (!LighthouseSceneLoader.Owns(__instance.gameObject.scene.name))
+        if (LighthouseHeadless.Active || !LighthouseSceneLoader.Owns(__instance.gameObject.scene.name))
         {
             return;
         }

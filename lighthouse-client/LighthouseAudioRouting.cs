@@ -15,7 +15,7 @@ internal static class LighthouseAudioRouting
 
     internal static void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (!LighthouseSceneLoader.Owns(scene.name))
+        if (LighthouseHeadless.Active || !LighthouseSceneLoader.Owns(scene.name))
         {
             return;
         }

@@ -7,7 +7,7 @@ internal static class LighthouseRainDiagnostics
 {
     internal static void AfterInit(RainFallDrops __instance, MeshRenderer ____rainRenderer, ref Material ____closeCopy)
     {
-        if (!LighthouseSceneLoader.IsNativeDonor(__instance.gameObject.scene.name))
+        if (LighthouseHeadless.Active || !LighthouseSceneLoader.IsNativeDonor(__instance.gameObject.scene.name))
         {
             return;
         }
