@@ -48,6 +48,7 @@ public sealed class Plugin : BaseUnityPlugin
         new Patches.KeyCleanup.BaseUpdatePatch().Enable();
         new Patches.KeyCleanup.SpawnPatch().Enable();
         new Patches.TunnelDoor.OnEnablePatch().Enable();
+        new Patches.BuoyFlicker.AwakePatch().Enable();
         new Patches.RainDiagnostics.InitPatch().Enable();
         new Patches.PadlockAudio.PlaySoundPatch().Enable();
         new Patches.BundledScenes.LoadScenePatch().Enable();
