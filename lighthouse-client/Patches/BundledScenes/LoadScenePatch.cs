@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 namespace Manimal.Lighthouse.Client.Patches.BundledScenes;
 
-internal sealed class LoadScenePatch : ModulePatch
+internal sealed class LoadScenePatch : LighthouseOwnedPatch<LoadScenePatch>
 {
     protected override MethodBase GetTargetMethod()
     {

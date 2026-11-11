@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Manimal.Lighthouse.Client.Patches.PadlockAudio;
 
-internal sealed class PlaySoundPatch : ModulePatch
+internal sealed class PlaySoundPatch : LighthouseOwnedPatch<PlaySoundPatch>
 {
     protected override MethodBase GetTargetMethod()
     {

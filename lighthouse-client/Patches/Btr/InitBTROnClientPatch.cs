@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Manimal.Lighthouse.Client.Patches.Btr;
 
-internal sealed class InitBTROnClientPatch : ModulePatch
+internal sealed class InitBTROnClientPatch : LighthouseOwnedPatch<InitBTROnClientPatch>
 {
     protected override MethodBase GetTargetMethod()
     {

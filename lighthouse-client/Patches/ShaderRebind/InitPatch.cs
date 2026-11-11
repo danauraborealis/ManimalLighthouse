@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace Manimal.Lighthouse.Client.Patches.ShaderRebind;
 
-internal sealed class InitPatch : ModulePatch
+internal sealed class InitPatch : LighthouseOwnedPatch<InitPatch>
 {
     protected override MethodBase GetTargetMethod()
     {

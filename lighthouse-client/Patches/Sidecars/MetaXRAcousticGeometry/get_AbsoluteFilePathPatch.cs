@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Manimal.Lighthouse.Client.Patches.Sidecars.MetaXRAcousticGeometry;
 
-internal sealed class get_AbsoluteFilePathPatch : ModulePatch
+internal sealed class get_AbsoluteFilePathPatch : LighthouseOwnedPatch<get_AbsoluteFilePathPatch>
 {
     protected override MethodBase GetTargetMethod()
     {

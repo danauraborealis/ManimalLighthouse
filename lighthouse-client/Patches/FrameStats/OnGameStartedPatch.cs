@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Manimal.Lighthouse.Client.Patches.FrameStats;
 
-internal sealed class OnGameStartedPatch : ModulePatch
+internal sealed class OnGameStartedPatch : LighthouseOwnedPatch<OnGameStartedPatch>
 {
     protected override MethodBase GetTargetMethod()
     {

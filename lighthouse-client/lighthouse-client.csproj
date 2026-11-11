@@ -12,6 +12,9 @@
     <EmbeddedResource Include="Resources/keeper-restore.json" LogicalName="Manimal.Lighthouse.Keeper.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="Verification/**/*.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="../lighthouse-shared/lighthouse-shared.csproj" />
     <Reference Include="UniTask">
       <HintPath>$(SPTPath)/BepInEx/plugins/UnityToolkit/UniTask.dll</HintPath>

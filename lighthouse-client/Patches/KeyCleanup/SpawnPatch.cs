@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Manimal.Lighthouse.Client.Patches.KeyCleanup;
 
-internal sealed class SpawnPatch : ModulePatch
+internal sealed class SpawnPatch : LighthouseOwnedPatch<SpawnPatch>
 {
     protected override MethodBase GetTargetMethod() => AccessTools.Method(typeof(MovementContext), nameof(MovementContext.SpawnKeyInHands));
 

@@ -32,40 +32,7 @@ public sealed class Plugin : BaseUnityPlugin
         // fully qualified — an unqualified Paths resolves to some other referenced type here
         LighthouseVerifiedFiles.CacheFile = Path.Combine(BepInEx.Paths.BepInExRootPath, "cache", "manimal-lighthouse-verified-files.txt");
 
-        new Patches.SceneLoader.LoadPresetAsyncReversePatch().Enable();
-        new Patches.SceneLoader.LoadPresetAsyncPatch().Enable();
-        new Patches.Sidecars.GetPackedFilePathForGridPatch().Enable();
-        new Patches.Sidecars.ConstructorPatch().Enable();
-        new Patches.Sidecars.MetaXRAcousticMap.get_AbsoluteFilePathPatch().Enable();
-        new Patches.Sidecars.MetaXRAcousticMap.LoadMapAsyncPatch().Enable();
-        new Patches.Sidecars.MetaXRAcousticGeometry.get_AbsoluteFilePathPatch().Enable();
-        new Patches.Sidecars.MetaXRAcousticGeometry.LoadGeometryAsyncPatch().Enable();
-        new Patches.ShaderRebind.InitPatch().Enable();
-        new Patches.ShaderRebind.OnGameStartedPatch().Enable();
-        new Patches.KeyCleanup.ExitPatch().Enable();
-        new Patches.KeyCleanup.EnterPatch().Enable();
-        new Patches.KeyCleanup.StopPatch().Enable();
-        new Patches.KeyCleanup.BaseUpdatePatch().Enable();
-        new Patches.KeyCleanup.SpawnPatch().Enable();
-        new Patches.TunnelDoor.OnEnablePatch().Enable();
-        new Patches.BuoyFlicker.AwakePatch().Enable();
-        new Patches.RainDiagnostics.InitPatch().Enable();
-        new Patches.PadlockAudio.PlaySoundPatch().Enable();
-        new Patches.BundledScenes.LoadScenePatch().Enable();
-        new Patches.SceneCaches.AwakePatch().Enable();
-        new Patches.KeeperRestore.BufferZoneContainerAwakePatch().Enable();
-        new Patches.KeeperRestore.KeeperZoneAwakePatch().Enable();
-        new Patches.MemoryManagement.set_GCEnabledPatch().Enable();
-        new Patches.Btr.LoadMapPathsConfigurationPatch().Enable();
-        new Patches.Btr.LoadBTRVehiclePatch().Enable();
-        new Patches.Btr.InitBTRServerPatch().Enable();
-        new Patches.Btr.InitBTROnClientPatch().Enable();
-        new Patches.FrameStats.OnGameStartedPatch().Enable();
-        new Patches.Culling.CrossSceneSamplerStartPatch().Enable();
-        LighthouseAmbience.Install();
-
-        new Patches.Ambience.InitPatch().Enable();
-        LighthouseWaypointsCompatibility.EnableIfAvailable();
+        LighthousePatchLifetime.InstallGlobal();
 
         SceneManager.sceneLoaded += LighthouseQuestTriggers.SceneLoaded;
         SceneManager.sceneLoaded += LighthouseAmbience.SceneLoaded;
@@ -84,13 +51,18 @@ public sealed class Plugin : BaseUnityPlugin
 
     private void OnDestroy()
     {
-        SceneManager.sceneUnloaded -= LighthouseSceneLoader.SceneUnloaded;
+        // The loader keeps its static unload observer until any owned/donor
+        // scenes finish draining; it also retires global interception once a
+        // pending replacement operation is no longer using the reverse stub.
+        LighthouseSceneLoader.BeginShutdown();
+    }
+
+    internal static void DetachSceneCallbacks()
+    {
         SceneManager.sceneLoaded -= LighthouseQuestTriggers.SceneLoaded;
         SceneManager.sceneLoaded -= LighthouseAmbience.SceneLoaded;
         SceneManager.sceneLoaded -= LighthouseShaderRebind.SceneLoaded;
         SceneManager.sceneLoaded -= LighthouseTestEnvironment.SceneLoaded;
         SceneManager.sceneLoaded -= LighthouseAudioRouting.SceneLoaded;
-
-        LighthouseSceneLoader.ReleaseIfUnused();
     }
 }

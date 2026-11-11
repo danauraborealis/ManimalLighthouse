@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Manimal.Lighthouse.Client.Patches.RainDiagnostics;
 
-internal sealed class InitPatch : ModulePatch
+internal sealed class InitPatch : LighthouseOwnedPatch<InitPatch>
 {
     protected override MethodBase GetTargetMethod()
     {

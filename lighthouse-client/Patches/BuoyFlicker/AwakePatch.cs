@@ -5,7 +5,7 @@ using SPT.Reflection.Patching;
 
 namespace Manimal.Lighthouse.Client.Patches.BuoyFlicker;
 
-internal sealed class AwakePatch : ModulePatch
+internal sealed class AwakePatch : LighthouseOwnedPatch<AwakePatch>
 {
     protected override MethodBase GetTargetMethod()
     {

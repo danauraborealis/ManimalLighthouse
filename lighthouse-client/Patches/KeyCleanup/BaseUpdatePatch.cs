@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Manimal.Lighthouse.Client.Patches.KeyCleanup;
 
-internal sealed class BaseUpdatePatch : ModulePatch
+internal sealed class BaseUpdatePatch : LighthouseOwnedPatch<BaseUpdatePatch>
 {
     protected override MethodBase GetTargetMethod() => AccessTools.Method(typeof(DoorInteractState), nameof(DoorInteractState.BaseUpdate));
 

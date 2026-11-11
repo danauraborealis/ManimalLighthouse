@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Manimal.Lighthouse.Client.Patches.SceneLoader;
 
-internal sealed class LoadPresetAsyncPatch : ModulePatch
+internal sealed class LoadPresetAsyncPatch : LighthouseOwnedPatch<LoadPresetAsyncPatch>
 {
     protected override MethodBase GetTargetMethod()
     {

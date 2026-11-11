@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Manimal.Lighthouse.Client.Patches.KeyCleanup;
 
-internal sealed class EnterPatch : ModulePatch
+internal sealed class EnterPatch : LighthouseOwnedPatch<EnterPatch>
 {
     protected override MethodBase GetTargetMethod() => AccessTools.Method(typeof(DoorInteractState), nameof(DoorInteractState.Enter));
 

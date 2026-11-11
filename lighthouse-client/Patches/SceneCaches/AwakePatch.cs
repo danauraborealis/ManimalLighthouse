@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace Manimal.Lighthouse.Client.Patches.SceneCaches;
 
-internal sealed class AwakePatch : ModulePatch
+internal sealed class AwakePatch : LighthouseOwnedPatch<AwakePatch>
 {
     protected override MethodBase GetTargetMethod()
     {

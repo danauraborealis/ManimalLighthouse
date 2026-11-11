@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Manimal.Lighthouse.Client.Patches.Sidecars;
 
-internal sealed class ConstructorPatch : ModulePatch
+internal sealed class ConstructorPatch : LighthouseOwnedPatch<ConstructorPatch>
 {
     protected override MethodBase GetTargetMethod()
     {

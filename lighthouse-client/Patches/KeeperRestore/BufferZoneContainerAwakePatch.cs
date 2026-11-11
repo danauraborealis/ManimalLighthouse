@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Manimal.Lighthouse.Client.Patches.KeeperRestore;
 
-internal sealed class BufferZoneContainerAwakePatch : ModulePatch
+internal sealed class BufferZoneContainerAwakePatch : LighthouseOwnedPatch<BufferZoneContainerAwakePatch>
 {
     protected override MethodBase GetTargetMethod() => AccessTools.Method(typeof(BufferZoneContainer), nameof(BufferZoneContainer.Awake));
 

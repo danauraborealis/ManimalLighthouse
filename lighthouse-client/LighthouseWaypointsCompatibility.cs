@@ -13,23 +13,86 @@ internal static class LighthouseWaypointsCompatibility
 {
     private const string WaypointPatchTypeName = "DrakiaXYZ.Waypoints.Patches.WaypointPatch";
     private static ModulePatch? _patch;
-    private static bool _initialized;
+    private static MethodInfo? _injectNavmesh;
+    private static bool _apiWarningLogged;
 
     internal static void EnableIfAvailable()
     {
-        if (_initialized) return;
-        _initialized = true;
-        var patchType = FindLoadedType(WaypointPatchTypeName);
-        if (patchType is null) return;
-        var inject = patchType.GetMethod("InjectNavmesh", BindingFlags.NonPublic | BindingFlags.Static, null, [typeof(GameWorld)], null);
-        if (inject is null)
+        DiscoverIfAvailable();
+        if (_injectNavmesh is null || _patch?.IsActive == true)
         {
-            Plugin.Log.LogWarning("Lighthouse: Waypoints navmesh injection API was not recognized; its custom navmesh will still replace the reworked map's.");
             return;
         }
-        _patch = new InjectNavmeshPatch(inject);
-        _patch.Enable();
+
+        var patch = new InjectNavmeshPatch(_injectNavmesh);
+        _patch = patch;
+
+        try
+        {
+            patch.Enable();
+        }
+        catch
+        {
+            try
+            {
+                patch.Disable();
+                _patch = null;
+            }
+            catch (Exception e)
+            {
+                Plugin.Log.LogError("Lighthouse: Waypoints patch rollback failed: " + e);
+            }
+
+            throw;
+        }
+
         Plugin.Log.LogInfo("Lighthouse: Waypoints custom navmesh is skipped on the reworked Lighthouse; the scene's own navmesh is used.");
+    }
+
+    internal static void Disable()
+    {
+        var patch = _patch;
+        _patch = null;
+
+        if (patch is null)
+        {
+            return;
+        }
+
+        try
+        {
+            patch.Disable();
+        }
+        catch (Exception e)
+        {
+            Plugin.Log.LogError("Lighthouse: Waypoints patch teardown failed: " + e);
+        }
+    }
+
+    private static void DiscoverIfAvailable()
+    {
+        if (_injectNavmesh is not null || _apiWarningLogged)
+        {
+            return;
+        }
+
+        var patchType = FindLoadedType(WaypointPatchTypeName);
+        if (patchType is null)
+        {
+            // The optional plugin may be loaded after Lighthouse. Retry on
+            // the next replacement acquisition instead of consuming a
+            // one-shot initialized flag.
+            return;
+        }
+
+        _injectNavmesh = patchType.GetMethod("InjectNavmesh", BindingFlags.NonPublic | BindingFlags.Static, null, [typeof(GameWorld)], null);
+        if (_injectNavmesh is not null)
+        {
+            return;
+        }
+
+        _apiWarningLogged = true;
+        Plugin.Log.LogWarning("Lighthouse: Waypoints navmesh injection API was not recognized; its custom navmesh will still replace the reworked map's.");
     }
 
     private static Type? FindLoadedType(string fullName)
@@ -60,9 +123,16 @@ internal static class LighthouseWaypointsCompatibility
         return false;
     }
 
-    private sealed class InjectNavmeshPatch(MethodBase target) : ModulePatch
+    private sealed class InjectNavmeshPatch : LighthouseOwnedPatch<InjectNavmeshPatch>
     {
-        protected override MethodBase GetTargetMethod() => target;
+        private readonly MethodBase _target;
+
+        internal InjectNavmeshPatch(MethodBase target) : base(target)
+        {
+            _target = target;
+        }
+
+        protected override MethodBase GetTargetMethod() => _target;
 
         [PatchPrefix]
         private static bool Prefix(GameWorld gameWorld)

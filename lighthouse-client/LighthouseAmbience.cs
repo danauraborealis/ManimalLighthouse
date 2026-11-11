@@ -6,6 +6,7 @@ using Audio.AmbientSubsystem;
 using Audio.SpatialSystem;
 using Comfort.Common;
 using HarmonyLib;
+using SPT.Reflection.Patching;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,38 +17,71 @@ internal static class LighthouseAmbience
     private const string AmbientRoot = "AmbientAudioSystem";
     private const string ReplacementSound = "Lighthouse_Sound_ML";
     private static readonly string[] Lifecycle = ["Awake", "OnEnable", "Start", "OnDisable", "OnDestroy"];
+    private static readonly List<ModulePatch> LifecyclePatches = [];
 
     internal static void Install()
     {
+        if (LifecyclePatches.Count != 0)
+        {
+            return;
+        }
+
         var patched = new HashSet<MethodInfo>();
 
-        foreach (var type in typeof(AmbientAudioSystem).Assembly.GetTypes())
+        try
         {
-            var ns = type.Namespace ?? "";
-
-            if (!typeof(MonoBehaviour).IsAssignableFrom(type) || type.ContainsGenericParameters)
+            foreach (var type in typeof(AmbientAudioSystem).Assembly.GetTypes())
             {
-                continue;
+                var ns = type.Namespace ?? "";
+
+                if (!typeof(MonoBehaviour).IsAssignableFrom(type) || type.ContainsGenericParameters)
+                {
+                    continue;
+                }
+
+                if (ns == "Audio.AutoPanner" || ns.StartsWith("Audio.AmbientSubsystem", StringComparison.Ordinal))
+                {
+                    GuardLifecycle(type, patched);
+                }
             }
 
-            if (ns == "Audio.AutoPanner" || ns.StartsWith("Audio.AmbientSubsystem", StringComparison.Ordinal))
+            foreach (var name in new[] {
+                "Audio.SpatialSystem.SpatialAudioSystem", "Audio.SpatialSystem.SpatialAudioPortal",
+                "Audio.SpatialSystem.AudioTriggerArea", "Audio.SpatialSystem.MultiWindowPortal",
+                "SpatialAudioRoom", "Audio.SpatialSystem.SpatialAudioCrossSceneGroup", "GuidComponent",
+                "CommonAssets.Scripts.Audio.RadioSystem.RadioBroadcastController",
+                "Audio.RadioSystem.ClientBroadcastPlayer", "MetaXRAcousticMap"
+            })
             {
+                var type = AccessTools.TypeByName(name) ?? throw new TypeLoadException(name);
+
                 GuardLifecycle(type, patched);
             }
         }
-
-        foreach (var name in new[] {
-            "Audio.SpatialSystem.SpatialAudioSystem", "Audio.SpatialSystem.SpatialAudioPortal",
-            "Audio.SpatialSystem.AudioTriggerArea", "Audio.SpatialSystem.MultiWindowPortal",
-            "SpatialAudioRoom", "Audio.SpatialSystem.SpatialAudioCrossSceneGroup", "GuidComponent",
-            "CommonAssets.Scripts.Audio.RadioSystem.RadioBroadcastController",
-            "Audio.RadioSystem.ClientBroadcastPlayer", "MetaXRAcousticMap"
-        })
+        catch
         {
-            var type = AccessTools.TypeByName(name) ?? throw new TypeLoadException(name);
-
-            GuardLifecycle(type, patched);
+            Release();
+            throw;
         }
+    }
+
+    internal static void Release()
+    {
+        for (var i = LifecyclePatches.Count - 1; i >= 0; i--)
+        {
+            try
+            {
+                // Disable also removes a partially-installed Harmony owner if
+                // a prior Enable failed before ModulePatch marked it active.
+                LifecyclePatches[i].Disable();
+            }
+            catch (Exception e)
+            {
+                Plugin.Log.LogError("Lighthouse ambience patch teardown failed: " + e);
+            }
+        }
+
+        LifecyclePatches.Clear();
     }
 
     private static void GuardLifecycle(Type type, HashSet<MethodInfo> patched)
@@ -68,7 +102,9 @@ internal static class LighthouseAmbience
                 continue;
             }
 
-            new Patches.Ambience.AudioLifecyclePatch(method).Enable();
+            var patch = new Patches.Ambience.AudioLifecyclePatch(method);
+            LifecyclePatches.Add(patch);
+            patch.Enable();
         }
     }
 

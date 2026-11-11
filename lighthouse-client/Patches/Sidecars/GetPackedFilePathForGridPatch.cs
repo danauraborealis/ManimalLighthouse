@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Manimal.Lighthouse.Client.Patches.Sidecars;
 
-internal sealed class GetPackedFilePathForGridPatch : ModulePatch
+internal sealed class GetPackedFilePathForGridPatch : LighthouseOwnedPatch<GetPackedFilePathForGridPatch>
 {
     protected override MethodBase GetTargetMethod()
     {

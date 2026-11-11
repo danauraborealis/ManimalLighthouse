@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Manimal.Lighthouse.Client.Patches.TunnelDoor;
 
-internal sealed class OnEnablePatch : ModulePatch
+internal sealed class OnEnablePatch : LighthouseOwnedPatch<OnEnablePatch>
 {
     protected override MethodBase GetTargetMethod()
     {

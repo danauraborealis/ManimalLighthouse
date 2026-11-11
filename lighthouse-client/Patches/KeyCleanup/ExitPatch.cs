@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Manimal.Lighthouse.Client.Patches.KeyCleanup;
 
-internal sealed class ExitPatch : ModulePatch
+internal sealed class ExitPatch : LighthouseOwnedPatch<ExitPatch>
 {
     protected override MethodBase GetTargetMethod()
     {

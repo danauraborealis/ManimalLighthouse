@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace Manimal.Lighthouse.Client.Patches.MemoryManagement;
 
-internal sealed class set_GCEnabledPatch : ModulePatch
+internal sealed class set_GCEnabledPatch : LighthouseOwnedPatch<set_GCEnabledPatch>
 {
     protected override MethodBase GetTargetMethod()
     {

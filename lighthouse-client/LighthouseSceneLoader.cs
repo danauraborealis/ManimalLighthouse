@@ -26,9 +26,12 @@ internal static class LighthouseSceneLoader
     private static readonly List<AssetBundle> Bundles = [];
     private static readonly HashSet<string> SceneNames = new(StringComparer.OrdinalIgnoreCase);
     private static readonly HashSet<string> NativeDonorScenes = new(StringComparer.OrdinalIgnoreCase);
-    private static bool _loading;
+    private static volatile bool _loading;
+    private static volatile bool _shutdown;
+    private static volatile LoadScenesFromPresetOperation? _pendingOperation;
     private static ScenesPreset? _ownedPreset;
     internal static bool HasReplacement => _ownedPreset;
+    internal static bool IsShuttingDown => _shutdown;
 
     // EFT's callback consumes increments in scene units, not an absolute percentage.
     private const int PreparationSceneUnits = 3;
@@ -51,6 +54,10 @@ internal static class LighthouseSceneLoader
 
     public static bool Prefix(LoadScenesFromPresetOperation __instance, ScenesPreset preset, ref Task __result)
     {
+        // Shutdown stops this replacement loader; unrelated/native presets
+        // must still be allowed through while the old scenes finish draining.
+        if (_shutdown) return true;
+
         if (!preset || !string.Equals(preset.ServerName, "Lighthouse", StringComparison.OrdinalIgnoreCase))
         {
             return true;
@@ -65,8 +72,26 @@ internal static class LighthouseSceneLoader
 
         return false;
     }
+
+    private static void ThrowIfStopping(LoadScenesFromPresetOperation operation)
+    {
+        operation._cancellationToken.ThrowIfCancellationRequested();
+
+        if (_shutdown)
+        {
+            throw new OperationCanceledException("Lighthouse replacement loading stopped during plugin shutdown.",
+                operation._cancellationToken);
+        }
+    }
+
     private static async Task LoadReplacement(LoadScenesFromPresetOperation operation, ScenesPreset native)
     {
+        if (_shutdown)
+        {
+            operation.SetCancelled();
+            return;
+        }
+
         if (_loading)
         {
             operation.SetFailed("Lighthouse replacement is already loading.");
@@ -76,6 +101,7 @@ internal static class LighthouseSceneLoader
 
         ReleaseIfUnused();
         _loading = true;
+        _pendingOperation = operation;
 
         var succeeded = false;
         var preparation = new PreparationProgress(operation._progress);
@@ -83,7 +109,7 @@ internal static class LighthouseSceneLoader
 
         try
         {
-            operation._cancellationToken.ThrowIfCancellationRequested();
+            ThrowIfStopping(operation);
 
             var path = Path.Combine(Plugin.Root, ManifestRules.FileName);
             var manifest = JsonConvert.DeserializeObject<ContentManifest>(await File.ReadAllTextAsync(path))!;
@@ -119,7 +145,7 @@ internal static class LighthouseSceneLoader
 
             if (await Task.WhenAny(request, timeout) != request)
             {
-                operation._cancellationToken.ThrowIfCancellationRequested();
+                ThrowIfStopping(operation);
 
                 throw new TimeoutException("Lighthouse server compatibility check timed out.");
             }
@@ -140,7 +166,7 @@ internal static class LighthouseSceneLoader
                 var payloadIndex = 0;
                 foreach (var bundle in manifest.Bundles)
                 {
-                    operation._cancellationToken.ThrowIfCancellationRequested();
+                    ThrowIfStopping(operation);
                     LighthouseVerifiedFiles.Verify(Plugin.Root, bundle.Path, bundle.Sha256, operation._cancellationToken,
                         value => verificationProgress.Report(0.75f + 0.25f * (payloadIndex + value) / payloadCount));
                     payloadIndex++;
@@ -148,13 +174,13 @@ internal static class LighthouseSceneLoader
 
                 foreach (var sidecar in manifest.Sidecars)
                 {
-                    operation._cancellationToken.ThrowIfCancellationRequested();
+                    ThrowIfStopping(operation);
                     LighthouseVerifiedFiles.Verify(Plugin.Root, sidecar.Path, sidecar.Sha256, operation._cancellationToken,
                         value => verificationProgress.Report(0.75f + 0.25f * (payloadIndex + value) / payloadCount));
                     payloadIndex++;
                 }
             }, operation._cancellationToken);
-            operation._cancellationToken.ThrowIfCancellationRequested();
+            ThrowIfStopping(operation);
             preparation.Report(0.70f);
             Plugin.Log.LogInfo($"Lighthouse preparation: file verification finished at {timer.Elapsed.TotalSeconds:F1}s; opening bundles asynchronously.");
 
@@ -173,7 +199,7 @@ internal static class LighthouseSceneLoader
 
             foreach (var entry in manifest.Bundles)
             {
-                operation._cancellationToken.ThrowIfCancellationRequested();
+                ThrowIfStopping(operation);
 
                 if (LighthouseHeadless.Active && PresentationBundles.Contains(entry.Path))
                 {
@@ -195,7 +221,7 @@ internal static class LighthouseSceneLoader
                 }
 
                 Bundles.Add(bundle);
-                operation._cancellationToken.ThrowIfCancellationRequested();
+                ThrowIfStopping(operation);
 
                 switch (entry.Path)
                 {
@@ -272,6 +298,11 @@ internal static class LighthouseSceneLoader
             _ownedPreset._scenesResourceKeys = replacementKeys;
             operation._totalScenesToLoad = _ownedPreset.GetTotalSceneCount() + donorCount + PreparationSceneUnits;
             LighthouseSidecars.Activate(manifest);
+            ThrowIfStopping(operation);
+            // All scene/runtime wrappers must be active before the original
+            // loader is allowed to activate replacement and donor scenes.
+            LighthousePatchLifetime.Acquire();
+            ThrowIfStopping(operation);
             Plugin.Log.LogInfo(
                 "Loading coherent Lighthouse content " + manifest.ContentId + " (29 replacement scenes).");
             await Patches.SceneLoader.LoadPresetAsyncReversePatch.LoadOriginal(operation, _ownedPreset);
@@ -308,7 +339,7 @@ internal static class LighthouseSceneLoader
                 }
             }
 
-            operation._cancellationToken.ThrowIfCancellationRequested();
+            ThrowIfStopping(operation);
             succeeded = true;
         }
         catch (OperationCanceledException)
@@ -335,7 +366,9 @@ internal static class LighthouseSceneLoader
             }
             finally
             {
-                _loading = false; ReleaseIfUnused();
+                _pendingOperation = null;
+                _loading = false;
+                ReleaseIfUnused();
             }
         }
     }
@@ -355,22 +388,53 @@ internal static class LighthouseSceneLoader
 
         foreach (var scene in scenes)
         {
-            var unloading = SceneManager.UnloadSceneAsync(scene);
-
-            if (unloading == null || unloading.isDone)
+            try
             {
-                continue;
+                var unloading = SceneManager.UnloadSceneAsync(scene);
+
+                if (unloading == null || unloading.isDone)
+                {
+                    continue;
+                }
+
+                var completion = new TaskCompletionSource<bool>();
+
+                unloading.completed += _ => completion.TrySetResult(true);
+                await completion.Task;
             }
-
-            var completion = new TaskCompletionSource<bool>();
-
-            unloading.completed += _ => completion.TrySetResult(true);
-            await completion.Task;
+            catch (Exception e)
+            {
+                // One scene can fail to unload while the remaining partial
+                // replacement scenes are still safe to tear down.
+                Plugin.Log.LogError("Lighthouse partial scene cleanup failed for " + scene.name + ": " + e);
+            }
         }
     }
+
+    internal static void BeginShutdown()
+    {
+        _shutdown = true;
+        if (_pendingOperation is not null)
+        {
+            try
+            {
+                _pendingOperation.SetCancelled();
+            }
+            catch (Exception e)
+            {
+                Plugin.Log.LogError("Lighthouse pending operation shutdown failed: " + e);
+            }
+        }
+
+        // If no replacement operation is pending this retires the global
+        // interception immediately. During a pending load, its finally block
+        // retries this after the reverse stub is no longer in use.
+        ReleaseIfUnused();
+    }
+
     public static void SceneUnloaded(Scene scene)
     {
-        if (SceneNames.Contains(scene.name) || NativeDonorScenes.Contains(scene.name))
+        if (SceneNames.Contains(scene.name) || NativeDonorScenes.Contains(scene.name) || _shutdown)
         {
             ReleaseIfUnused();
         }
@@ -378,6 +442,12 @@ internal static class LighthouseSceneLoader
     internal static bool Owns(string sceneName) => SceneNames.Contains(sceneName);
     internal static bool IsNativeDonor(string sceneName) => NativeDonorScenes.Contains(sceneName);
     internal static bool IsNativeAmbienceDonor(string sceneName) => IsNativeDonor(sceneName) && sceneName == "Lighthouse_Sound";
+
+    private static bool HasOwnedScenes() =>
+        ValueEnumerable.Range(0, SceneManager.sceneCount)
+            .Select(SceneManager.GetSceneAt)
+            .Any(scene => SceneNames.Contains(scene.name) || NativeDonorScenes.Contains(scene.name));
+
     public static void ReleaseIfUnused()
     {
         if (_loading)
@@ -385,40 +455,127 @@ internal static class LighthouseSceneLoader
             return;
         }
 
-        for (var i = 0; i < SceneManager.sceneCount; i++)
+        var globalsReleased = !_shutdown || LighthousePatchLifetime.DisableGlobal();
+
+        if (HasOwnedScenes())
         {
-            if (SceneNames.Contains(SceneManager.GetSceneAt(i).name) || NativeDonorScenes.Contains(SceneManager.GetSceneAt(i).name))
-            {
-                return;
-            }
+            return;
         }
 
-        LighthouseTerrainBindings.Clear();
-        LighthouseGrassBindings.Clear();
-        LighthouseWaterBindings.Clear();
-        LighthouseRainRendering.Clear();
+        LighthousePatchLifetime.Release();
+
+        try
+        {
+            LighthouseTerrainBindings.Clear();
+        }
+        catch (Exception e)
+        {
+            Plugin.Log.LogError("Lighthouse terrain teardown failed: " + e);
+        }
+
+        try
+        {
+            LighthouseGrassBindings.Clear();
+        }
+        catch (Exception e)
+        {
+            Plugin.Log.LogError("Lighthouse grass teardown failed: " + e);
+        }
+
+        try
+        {
+            LighthouseWaterBindings.Clear();
+        }
+        catch (Exception e)
+        {
+            Plugin.Log.LogError("Lighthouse water teardown failed: " + e);
+        }
+
+        try
+        {
+            LighthouseRainRendering.Clear();
+        }
+        catch (Exception e)
+        {
+            Plugin.Log.LogError("Lighthouse rain teardown failed: " + e);
+        }
 
         foreach (var bundle in Bundles)
         {
             if (bundle)
             {
-                bundle.Unload(true);
+                try
+                {
+                    bundle.Unload(true);
+                }
+                catch (Exception e)
+                {
+                    Plugin.Log.LogError("Lighthouse bundle teardown failed: " + e);
+                }
             }
         }
 
         Bundles.Clear();
         SceneNames.Clear();
         NativeDonorScenes.Clear();
-        LighthouseSidecars.Clear();
-        LighthouseShaderRebind.Clear();
-        LighthouseKeeperRestore.Clear();
-        LighthouseAudioRouting.Clear();
+
+        try
+        {
+            LighthouseSidecars.Clear();
+        }
+        catch (Exception e)
+        {
+            Plugin.Log.LogError("Lighthouse sidecar teardown failed: " + e);
+        }
+
+        try
+        {
+            LighthouseShaderRebind.Clear();
+        }
+        catch (Exception e)
+        {
+            Plugin.Log.LogError("Lighthouse shader teardown failed: " + e);
+        }
+
+        try
+        {
+            LighthouseKeeperRestore.Clear();
+        }
+        catch (Exception e)
+        {
+            Plugin.Log.LogError("Lighthouse keeper teardown failed: " + e);
+        }
+
+        try
+        {
+            LighthouseAudioRouting.Clear();
+        }
+        catch (Exception e)
+        {
+            Plugin.Log.LogError("Lighthouse audio teardown failed: " + e);
+        }
 
         if (_ownedPreset)
         {
-            UnityEngine.Object.Destroy(_ownedPreset);
+            try
+            {
+                UnityEngine.Object.Destroy(_ownedPreset);
+            }
+            catch (Exception e)
+            {
+                Plugin.Log.LogError("Lighthouse preset teardown failed: " + e);
+            }
         }
 
         _ownedPreset = null;
+
+        if (_shutdown && globalsReleased)
+        {
+            // Keep this observer alive through the last owned/donor unload,
+            // then detach it once all runtime resources and scoped patches
+            // have been released.
+            Plugin.DetachSceneCallbacks();
+            SceneManager.sceneUnloaded -= SceneUnloaded;
+        }
     }
 }

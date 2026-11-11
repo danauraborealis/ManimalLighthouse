@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Manimal.Lighthouse.Client.Patches.Ambience;
 
-internal sealed class AudioLifecyclePatch : ModulePatch
+internal sealed class AudioLifecyclePatch : LighthouseOwnedPatch<AudioLifecyclePatch>
 {
     private readonly MethodInfo _targetMethod;
 
-    internal AudioLifecyclePatch(MethodInfo targetMethod)
+    internal AudioLifecyclePatch(MethodInfo targetMethod) : base(targetMethod)
     {
         _targetMethod = targetMethod;
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Manimal.Lighthouse.Client.Patches.Sidecars.MetaXRAcousticMap;
 
-internal sealed class LoadMapAsyncPatch : ModulePatch
+internal sealed class LoadMapAsyncPatch : LighthouseOwnedPatch<LoadMapAsyncPatch>
 {
     protected override MethodBase GetTargetMethod()
     {

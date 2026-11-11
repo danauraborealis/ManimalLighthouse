@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Manimal.Lighthouse.Client.Patches.KeyCleanup;
 
-internal sealed class StopPatch : ModulePatch
+internal sealed class StopPatch : LighthouseOwnedPatch<StopPatch>
 {
     protected override MethodBase GetTargetMethod() => AccessTools.Method(typeof(DoorInteractState), nameof(DoorInteractState.StopInteractionAnimation));
 

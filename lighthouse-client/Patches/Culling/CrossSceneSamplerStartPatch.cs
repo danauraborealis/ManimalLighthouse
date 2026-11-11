@@ -6,7 +6,7 @@ using System.Reflection;
 namespace Manimal.Lighthouse.Client.Patches.Culling;
 
 // the sampler needs a PerfectCullingCamera, which fika destroys on a headless.
-internal sealed class CrossSceneSamplerStartPatch : ModulePatch
+internal sealed class CrossSceneSamplerStartPatch : LighthouseOwnedPatch<CrossSceneSamplerStartPatch>
 {
     protected override MethodBase GetTargetMethod()
     {

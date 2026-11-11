@@ -8,7 +8,7 @@ using SPT.Reflection.Patching;
 
 namespace Manimal.Lighthouse.Client.Patches.SceneLoader;
 
-internal sealed class LoadPresetAsyncReversePatch : ModulePatch
+internal sealed class LoadPresetAsyncReversePatch : LighthouseOwnedPatch<LoadPresetAsyncReversePatch>
 {
     protected override MethodBase GetTargetMethod()
     {

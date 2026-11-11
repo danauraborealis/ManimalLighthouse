@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Manimal.Lighthouse.Client.Patches.Btr;
 
-internal sealed class LoadMapPathsConfigurationPatch : ModulePatch
+internal sealed class LoadMapPathsConfigurationPatch : LighthouseOwnedPatch<LoadMapPathsConfigurationPatch>
 {
     protected override MethodBase GetTargetMethod()
     {
