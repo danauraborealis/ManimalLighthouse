@@ -493,6 +493,15 @@ internal static class LighthouseSceneLoader
 
         try
         {
+            LighthouseSeasons.Clear();
+        }
+        catch (Exception e)
+        {
+            Plugin.Log.LogError("Lighthouse season teardown failed: " + e);
+        }
+
+        try
+        {
             LighthouseRainRendering.Clear();
         }
         catch (Exception e)

@@ -47,6 +47,8 @@ internal static class LighthouseGrassBindings
     private static readonly List<GPUInstancerDetailManager> Managers = [];
     private static readonly HashSet<Terrain> Restored = [];
     public static int ManagerCount => Managers.Count;
+    internal static List<GPUInstancerDetailManager> ActiveManagers => Managers;
+    internal static IEnumerable<ScriptableObject> Instances => Objects.Values;
 
     public static void Load(AssetBundle bundle, Action<Material> bindMaterial)
     {

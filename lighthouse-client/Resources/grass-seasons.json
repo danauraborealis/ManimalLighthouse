@@ -1,0 +1,2077 @@
+{
+ "Version": 1,
+ "Grass": [
+  {
+   "Key": "Field_grass_D_ead4fa",
+   "Asset": "Field_grass_D",
+   "Summer": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/field_grass_d",
+    "TextureRcid": "field_grass_d",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/field_grass_n",
+    "BumpRcid": "field_grass_n",
+    "Healthy": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Dry": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "WindTint": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "Autumn": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/field_grass_d_autumn",
+    "TextureRcid": "field_grass_d_autumn",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/field_grass_n_autumn",
+    "BumpRcid": "field_grass_n_autumn",
+    "Healthy": [
+     0.9339622855186462,
+     0.7592098712921143,
+     0.4317373037338257,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "AutumnLate": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/field_grass_d_autumn_late",
+    "TextureRcid": "field_grass_d_autumn_late",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/field_grass_n_autumn",
+    "BumpRcid": "field_grass_n_autumn",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Spring": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/field_grass_d_spring",
+    "TextureRcid": "field_grass_d_spring",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/field_grass_n_spring",
+    "BumpRcid": "field_grass_n_spring",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     1.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     1.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "SpringEarly": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/field_grass_d_spring_early",
+    "TextureRcid": "field_grass_d_spring_early",
+    "Bump": "",
+    "BumpRcid": "",
+    "Healthy": [
+     0.686274528503418,
+     0.7490196228027344,
+     0.6509804129600525,
+     1.0
+    ],
+    "Dry": [
+     0.9607843160629272,
+     1.0,
+     0.729411780834198,
+     1.0
+    ],
+    "WindTint": [
+     0.6980392336845398,
+     0.6000000238418579,
+     0.501960813999176,
+     0.0
+    ]
+   },
+   "Winter": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/field_grass_d_winter",
+    "TextureRcid": "field_grass_d_winter",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/field_grass_n_winter",
+    "BumpRcid": "field_grass_n_winter",
+    "Healthy": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "Dry": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "WindTint": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "Key": "Grass2_D_40d9d4",
+   "Asset": "Grass2_D",
+   "Summer": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass2_d",
+    "TextureRcid": "grass2_d",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass2_n",
+    "BumpRcid": "grass2_n",
+    "Healthy": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Dry": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "WindTint": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "Autumn": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass2_d_autumn",
+    "TextureRcid": "grass2_d_autumn",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass2_n_autumn",
+    "BumpRcid": "grass2_n_autumn",
+    "Healthy": [
+     0.9339622855186462,
+     0.7592098712921143,
+     0.4317373037338257,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "AutumnLate": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass2_d_autumn_late",
+    "TextureRcid": "grass2_d_autumn_late",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass2_n_autumn_late",
+    "BumpRcid": "grass2_n_autumn_late",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Spring": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass2_d_spring",
+    "TextureRcid": "grass2_d_spring",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass2_n_spring",
+    "BumpRcid": "grass2_n_spring",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     1.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     1.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "SpringEarly": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass2_d_spring_early",
+    "TextureRcid": "grass2_d_spring_early",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass2_n_spring_early",
+    "BumpRcid": "grass2_n_spring_early",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Winter": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass2_d_winter",
+    "TextureRcid": "grass2_d_winter",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass2_n_winter",
+    "BumpRcid": "grass2_n_winter",
+    "Healthy": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "Dry": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "WindTint": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "Key": "Grass4_D_bf0a23",
+   "Asset": "Grass4_D",
+   "Summer": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass4_d",
+    "TextureRcid": "grass4_d",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass4_n",
+    "BumpRcid": "grass4_n",
+    "Healthy": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Dry": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "WindTint": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "Autumn": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass4_d_autumn",
+    "TextureRcid": "grass4_d_autumn",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass4_n_autumn",
+    "BumpRcid": "grass4_n_autumn",
+    "Healthy": [
+     0.9339622855186462,
+     0.7592098712921143,
+     0.4317373037338257,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "AutumnLate": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass4_d_autumn_late",
+    "TextureRcid": "grass4_d_autumn_late",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass4_n_autumn_late",
+    "BumpRcid": "grass4_n_autumn_late",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Spring": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass4_d_spring",
+    "TextureRcid": "grass4_d_spring",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass4_n_spring",
+    "BumpRcid": "grass4_n_spring",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     1.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     1.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "SpringEarly": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass4_d_spring_early",
+    "TextureRcid": "grass4_d_spring_early",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass4_n_spring_early",
+    "BumpRcid": "grass4_n_spring_early",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Winter": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass4_d_winter",
+    "TextureRcid": "grass4_d_winter",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass4_n_winter",
+    "BumpRcid": "grass4_n_winter",
+    "Healthy": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "Dry": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "WindTint": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "Key": "Grass5_D_a84c21",
+   "Asset": "Grass5_D",
+   "Summer": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass5_d",
+    "TextureRcid": "grass5_d",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass5_n",
+    "BumpRcid": "grass5_n",
+    "Healthy": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Dry": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "WindTint": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "Autumn": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass5_d_autumn",
+    "TextureRcid": "grass5_d_autumn",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass5_n_autumn",
+    "BumpRcid": "grass5_n_autumn",
+    "Healthy": [
+     0.9339622855186462,
+     0.7592098712921143,
+     0.4317373037338257,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "AutumnLate": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass5_d_autumn_late",
+    "TextureRcid": "grass5_d_autumn_late",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass5_n_autumn_late",
+    "BumpRcid": "grass5_n_autumn_late",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Spring": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass5_d_spring",
+    "TextureRcid": "grass5_d_spring",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass5_n_spring",
+    "BumpRcid": "grass5_n_spring",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     1.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     1.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "SpringEarly": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass5_d_spring_early",
+    "TextureRcid": "grass5_d_spring_early",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass5_n_spring_early",
+    "BumpRcid": "grass5_n_spring_early",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Winter": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass5_d_winter",
+    "TextureRcid": "grass5_d_winter",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass5_n_winter",
+    "BumpRcid": "grass5_n_winter",
+    "Healthy": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "Dry": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "WindTint": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "Key": "Grass6_D_02_e280d4",
+   "Asset": "Grass6_D_02",
+   "Summer": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_d_02",
+    "TextureRcid": "grass6_d_02",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_n",
+    "BumpRcid": "grass6_n",
+    "Healthy": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Dry": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "WindTint": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "Autumn": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_d_02_autumn",
+    "TextureRcid": "grass6_d_02_autumn",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_n_autumn",
+    "BumpRcid": "grass6_n_autumn",
+    "Healthy": [
+     0.9339622855186462,
+     0.7592098712921143,
+     0.4317373037338257,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "AutumnLate": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_d_02_autumn_late",
+    "TextureRcid": "grass6_d_02_autumn_late",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_n_autumn_late",
+    "BumpRcid": "grass6_n_autumn_late",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Spring": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_d_02_spring",
+    "TextureRcid": "grass6_d_02_spring",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_n_spring",
+    "BumpRcid": "grass6_n_spring",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     1.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     1.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "SpringEarly": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_d_02_spring_early",
+    "TextureRcid": "grass6_d_02_spring_early",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_n_spring_early",
+    "BumpRcid": "grass6_n_spring_early",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Winter": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_d_02_winter",
+    "TextureRcid": "grass6_d_02_winter",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_n_winter",
+    "BumpRcid": "grass6_n_winter",
+    "Healthy": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "Dry": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "WindTint": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "Key": "Grass6_D_adb33a",
+   "Asset": "Grass6_D",
+   "Summer": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_d",
+    "TextureRcid": "grass6_d",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_n",
+    "BumpRcid": "grass6_n",
+    "Healthy": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Dry": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "WindTint": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "Autumn": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_d_autumn",
+    "TextureRcid": "grass6_d_autumn",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_n_autumn",
+    "BumpRcid": "grass6_n_autumn",
+    "Healthy": [
+     0.9339622855186462,
+     0.7592098712921143,
+     0.4317373037338257,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "AutumnLate": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_d_autumn_late",
+    "TextureRcid": "grass6_d_autumn_late",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_n_autumn_late",
+    "BumpRcid": "grass6_n_autumn_late",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Spring": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_d_spring",
+    "TextureRcid": "grass6_d_spring",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_n_spring",
+    "BumpRcid": "grass6_n_spring",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     1.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     1.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "SpringEarly": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_d_spring_early",
+    "TextureRcid": "grass6_d_spring_early",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_n_spring_early",
+    "BumpRcid": "grass6_n_spring_early",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Winter": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_d_winter",
+    "TextureRcid": "grass6_d_winter",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass6_n_winter",
+    "BumpRcid": "grass6_n_winter",
+    "Healthy": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "Dry": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "WindTint": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "Key": "Grass_02_D_e84f39",
+   "Asset": "Grass_02_D",
+   "Summer": {
+    "Texture": "assets/content/rock and boulders3/origin/grass/grass_02_d",
+    "TextureRcid": "grass_02_d",
+    "Bump": "assets/content/rock and boulders3/origin/grass/grass_02_n",
+    "BumpRcid": "grass_02_n",
+    "Healthy": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Dry": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "WindTint": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "Autumn": {
+    "Texture": "assets/content/rock and boulders3/origin/grass/grass_02_d_autumn",
+    "TextureRcid": "grass_02_d_autumn",
+    "Bump": "assets/content/rock and boulders3/origin/grass/grass_02_n_autumn",
+    "BumpRcid": "grass_02_n_autumn",
+    "Healthy": [
+     0.9339622855186462,
+     0.7592098712921143,
+     0.4317373037338257,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "AutumnLate": {
+    "Texture": "assets/content/rock and boulders3/origin/grass/grass_02_d_autumn_late",
+    "TextureRcid": "grass_02_d_autumn_late",
+    "Bump": "assets/content/rock and boulders3/origin/grass/grass_02_n_autumn_late",
+    "BumpRcid": "grass_02_n_autumn_late",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Spring": {
+    "Texture": "assets/content/rock and boulders3/origin/grass/grass_02_d_spring",
+    "TextureRcid": "grass_02_d_spring",
+    "Bump": "assets/content/rock and boulders3/origin/grass/grass_02_n_spring",
+    "BumpRcid": "grass_02_n_spring",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     1.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     1.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "SpringEarly": {
+    "Texture": "assets/content/rock and boulders3/origin/grass/grass_02_d_spring_early",
+    "TextureRcid": "grass_02_d_autumn_early",
+    "Bump": "assets/content/rock and boulders3/origin/grass/grass_02_n_spring_early",
+    "BumpRcid": "grass_02_n_spring_early",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Winter": {
+    "Texture": "assets/content/rock and boulders3/origin/grass/grass_02_d_winter",
+    "TextureRcid": "grass_02_d_winter",
+    "Bump": "assets/content/rock and boulders3/origin/grass/grass_02_n_winter",
+    "BumpRcid": "grass_02_n_winter",
+    "Healthy": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "Dry": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "WindTint": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "Key": "Grass_2_roma_eb7931",
+   "Asset": "Grass_2_roma",
+   "Summer": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_2_roma",
+    "TextureRcid": "grass_2_roma",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_2_roma_n",
+    "BumpRcid": "grass_2_roma_n",
+    "Healthy": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Dry": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "WindTint": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "Autumn": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_2_roma_autumn",
+    "TextureRcid": "grass_2_roma_autumn",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_2_roma_n_autumn",
+    "BumpRcid": "grass_2_roma_n_autumn",
+    "Healthy": [
+     0.9339622855186462,
+     0.7592098712921143,
+     0.4317373037338257,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "AutumnLate": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_2_roma_autumn_late",
+    "TextureRcid": "grass_2_roma_autumn_late",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_2_roma_n_autumn_late",
+    "BumpRcid": "grass_2_roma_n_autumn_late",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Spring": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_2_roma_spring",
+    "TextureRcid": "grass_2_roma_spring",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_2_roma_n_spring",
+    "BumpRcid": "grass_2_roma_n_spring",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     1.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     1.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "SpringEarly": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_2_roma_spring_early",
+    "TextureRcid": "grass_2_roma_spring_early",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_2_roma_n_spring_early",
+    "BumpRcid": "grass_2_roma_n_spring_early",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Winter": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_2_roma_winter",
+    "TextureRcid": "grass_2_roma_winter",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_2_roma_n_winter",
+    "BumpRcid": "grass_2_roma_n_winter",
+    "Healthy": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "Dry": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "WindTint": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "Key": "Grass_new_1_D_e2eb60",
+   "Asset": "Grass_new_1_D",
+   "Summer": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_1_d",
+    "TextureRcid": "grass_new_1_d",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_1_n",
+    "BumpRcid": "grass_new_1_n",
+    "Healthy": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Dry": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "WindTint": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "Autumn": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_1_d_autumn",
+    "TextureRcid": "grass_new_1_d_autumn",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_1_n_autumn",
+    "BumpRcid": "grass_new_1_n_autumn",
+    "Healthy": [
+     0.9339622855186462,
+     0.7592098712921143,
+     0.4317373037338257,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "AutumnLate": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_1_d_autumn_late",
+    "TextureRcid": "grass_new_1_d_autumn_late",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_1_n_autumn_late",
+    "BumpRcid": "grass_new_1_n_autumn_late",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Spring": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_1_d_spring",
+    "TextureRcid": "grass_new_1_d_spring",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_1_n_spring",
+    "BumpRcid": "grass_new_1_n_spring",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     1.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     1.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "SpringEarly": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_1_d_spring_early",
+    "TextureRcid": "grass_new_1_d_spring_early",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_1_n_spring_early",
+    "BumpRcid": "grass_new_1_n_spring_early",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Winter": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_1_d_winter",
+    "TextureRcid": "grass_new_1_d_winter",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_1_n_winter",
+    "BumpRcid": "grass_new_1_n_winter",
+    "Healthy": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "Dry": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "WindTint": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "Key": "Grass_new_2_D_fa097b",
+   "Asset": "Grass_new_2_D",
+   "Summer": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_2_d",
+    "TextureRcid": "grass_new_2_d",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_2_n",
+    "BumpRcid": "grass_new_2_n",
+    "Healthy": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Dry": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "WindTint": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "Autumn": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_2_d_autumn",
+    "TextureRcid": "grass_new_2_d_autumn",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_2_n_autumn",
+    "BumpRcid": "grass_new_2_n_autumn",
+    "Healthy": [
+     0.9339622855186462,
+     0.7592098712921143,
+     0.4317373037338257,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "AutumnLate": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_2_d_autumn_late",
+    "TextureRcid": "grass_new_2_d_autumn_late",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_2_n_autumn_late",
+    "BumpRcid": "grass_new_2_n_autumn_late",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Spring": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_2_d_spring",
+    "TextureRcid": "grass_new_2_d_spring",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_2_n_spring",
+    "BumpRcid": "grass_new_2_n_spring",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     1.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     1.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "SpringEarly": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_2_d_spring_early",
+    "TextureRcid": "grass_new_2_d_spring_early",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_2_n_spring_early",
+    "BumpRcid": "grass_new_2_n_spring_early",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Winter": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_2_d_winter",
+    "TextureRcid": "grass_new_2_d_winter",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_2_n_winter",
+    "BumpRcid": "grass_new_2_n_winter",
+    "Healthy": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "Dry": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "WindTint": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "Key": "Grass_new_3_D_27bbce",
+   "Asset": "Grass_new_3_D",
+   "Summer": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_3_d",
+    "TextureRcid": "grass_new_3_d",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_3_n",
+    "BumpRcid": "grass_new_3_n",
+    "Healthy": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Dry": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "WindTint": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "Autumn": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_3_d_autumn",
+    "TextureRcid": "grass_new_3_d_autumn",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_3_n_autumn",
+    "BumpRcid": "grass_new_3_n_autumn",
+    "Healthy": [
+     0.9339622855186462,
+     0.7592098712921143,
+     0.4317373037338257,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "AutumnLate": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_3_d_autumn_late",
+    "TextureRcid": "grass_new_3_d_autumn_late",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_3_n_autumn_late",
+    "BumpRcid": "grass_new_3_n_autumn_late",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Spring": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_3_d_spring",
+    "TextureRcid": "grass_new_3_d_spring",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_3_n_spring",
+    "BumpRcid": "grass_new_3_n_spring",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     1.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     1.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "SpringEarly": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_3_d_spring_early",
+    "TextureRcid": "grass_new_3_d_spring_early",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_3_n_spring_early",
+    "BumpRcid": "grass_new_3_n_spring_early",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Winter": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_3_d_winter",
+    "TextureRcid": "grass_new_3_d_winter",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/grass_new_3_n_winter",
+    "BumpRcid": "grass_new_3_n_winter",
+    "Healthy": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "Dry": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "WindTint": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "Key": "T_KrapivaLittle_A_b6cf18",
+   "Asset": "T_KrapivaLittle_A",
+   "Summer": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_krapivalittle_a",
+    "TextureRcid": "t_krapivalittle_a",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_krapivalittle_n",
+    "BumpRcid": "t_krapivalittle_n",
+    "Healthy": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Dry": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "WindTint": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "Autumn": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_krapivalittle_a_autumn",
+    "TextureRcid": "t_krapivalittle_a_autumn",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_krapivalittle_n_autumn",
+    "BumpRcid": "t_krapivalittle_n_autumn",
+    "Healthy": [
+     0.9339622855186462,
+     0.7592098712921143,
+     0.4317373037338257,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "AutumnLate": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_krapivalittle_a_autumn_late",
+    "TextureRcid": "t_krapivalittle_a_autumn_late",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_krapivalittle_n_autumn_late",
+    "BumpRcid": "t_krapivalittle_n_autumn_late",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Spring": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_krapivalittle_a_spring",
+    "TextureRcid": "t_krapivalittle_a_spring",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_krapivalittle_n_spring",
+    "BumpRcid": "t_krapivalittle_n_spring",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     1.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     1.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "SpringEarly": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_krapivalittle_a_spring_early",
+    "TextureRcid": "t_krapivalittle_a_spring_early",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_krapivalittle_n_spring_early",
+    "BumpRcid": "t_krapivalittle_n_spring_early",
+    "Healthy": [
+     0.686274528503418,
+     0.7490196228027344,
+     0.6509804129600525,
+     1.0
+    ],
+    "Dry": [
+     0.9607843160629272,
+     1.0,
+     0.729411780834198,
+     1.0
+    ],
+    "WindTint": [
+     0.6980392336845398,
+     0.6000000238418579,
+     0.501960813999176,
+     0.0
+    ]
+   },
+   "Winter": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_krapivalittle_a_winter",
+    "TextureRcid": "t_krapivalittle_a_winter",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_krapivalittle_n_winter",
+    "BumpRcid": "t_krapivalittle_n_winter",
+    "Healthy": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "Dry": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "WindTint": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "Key": "T_WhitGrass_A_f83e15",
+   "Asset": "T_WhitGrass_A",
+   "Summer": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_whitgrass_a",
+    "TextureRcid": "t_whitgrass_a",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_whitgrass_n",
+    "BumpRcid": "t_whitgrass_n",
+    "Healthy": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Dry": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "WindTint": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "Autumn": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_whitgrass_a_autumn",
+    "TextureRcid": "t_whitgrass_a_autumn",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_whitgrass_n_autumn",
+    "BumpRcid": "t_whitgrass_n_autumn",
+    "Healthy": [
+     0.9339622855186462,
+     0.7592098712921143,
+     0.4317373037338257,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "AutumnLate": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_whitgrass_a_autumn_late",
+    "TextureRcid": "t_whitgrass_a_autumn_late",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_whitgrass_n_autumn_late",
+    "BumpRcid": "t_whitgrass_n_autumn_late",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Spring": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_whitgrass_a_spring",
+    "TextureRcid": "t_whitgrass_a_spring",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_whitgrass_n_spring",
+    "BumpRcid": "t_whitgrass_n_spring",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     1.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     1.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "SpringEarly": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_whitgrass_a_spring_early",
+    "TextureRcid": "t_whitgrass_a_spring_early",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_whitgrass_n_spring_early",
+    "BumpRcid": "t_whitgrass_n_spring_early",
+    "Healthy": [
+     0.686274528503418,
+     0.7490196228027344,
+     0.6509804129600525,
+     1.0
+    ],
+    "Dry": [
+     0.9607843160629272,
+     1.0,
+     0.729411780834198,
+     1.0
+    ],
+    "WindTint": [
+     0.6980392336845398,
+     0.6000000238418579,
+     0.501960813999176,
+     0.0
+    ]
+   },
+   "Winter": {
+    "Texture": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_whitgrass_a_winter",
+    "TextureRcid": "t_whitgrass_a_winter",
+    "Bump": "assets/content/location_objects/02_custom/fbx/_outdoor/_nature/grass/t_whitgrass_n_winter",
+    "BumpRcid": "t_whitgrass_n_winter",
+    "Healthy": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "Dry": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "WindTint": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "Key": "grass11_4ad690",
+   "Asset": "grass11",
+   "Summer": {
+    "Texture": "assets/content/location_objects/city_old/mesh/grass from cw/grass11",
+    "TextureRcid": "grass11",
+    "Bump": "",
+    "BumpRcid": "",
+    "Healthy": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Dry": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "WindTint": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "Autumn": {
+    "Texture": "assets/content/location_objects/city_old/mesh/grass from cw/grass11_autumn",
+    "TextureRcid": "grass11_autumn",
+    "Bump": "assets/content/location_objects/city_old/mesh/grass from cw/grass11_n_autumn",
+    "BumpRcid": "grass11_n_autumn",
+    "Healthy": [
+     0.9339622855186462,
+     0.7592098712921143,
+     0.4317373037338257,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "AutumnLate": {
+    "Texture": "assets/content/location_objects/city_old/mesh/grass from cw/grass11_autumn_late",
+    "TextureRcid": "grass11_autumn_late",
+    "Bump": "assets/content/location_objects/city_old/mesh/grass from cw/grass11_n_autumn_late",
+    "BumpRcid": "grass11_n_autumn_late",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     0.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     0.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "Spring": {
+    "Texture": "assets/content/location_objects/city_old/mesh/grass from cw/grass11_spring",
+    "TextureRcid": "grass11_spring",
+    "Bump": "assets/content/location_objects/city_old/mesh/grass from cw/grass11_n_spring",
+    "BumpRcid": "grass11_n_spring",
+    "Healthy": [
+     0.8509804010391235,
+     0.8509804010391235,
+     0.8509804010391235,
+     1.0
+    ],
+    "Dry": [
+     0.7490196228027344,
+     0.6509804129600525,
+     0.43921568989753723,
+     1.0
+    ],
+    "WindTint": [
+     0.6509804129600525,
+     0.6509804129600525,
+     0.6509804129600525,
+     0.0
+    ]
+   },
+   "SpringEarly": {
+    "Texture": "assets/content/location_objects/city_old/mesh/grass from cw/grass11_spring_early",
+    "TextureRcid": "grass11_spring_early",
+    "Bump": "assets/content/location_objects/city_old/mesh/grass from cw/grass11_n_spring_early",
+    "BumpRcid": "grass11_n_spring_early",
+    "Healthy": [
+     0.686274528503418,
+     0.7490196228027344,
+     0.6509804129600525,
+     1.0
+    ],
+    "Dry": [
+     0.9607843160629272,
+     1.0,
+     0.729411780834198,
+     1.0
+    ],
+    "WindTint": [
+     0.6980392336845398,
+     0.6000000238418579,
+     0.501960813999176,
+     0.0
+    ]
+   },
+   "Winter": {
+    "Texture": "assets/content/location_objects/city_old/mesh/grass from cw/grass11_winter",
+    "TextureRcid": "grass11_winter",
+    "Bump": "assets/content/location_objects/city_old/mesh/grass from cw/grass11_n_winter",
+    "BumpRcid": "grass11_n_winter",
+    "Healthy": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "Dry": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "WindTint": [
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  }
+ ]
+}

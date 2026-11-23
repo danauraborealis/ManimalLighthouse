@@ -521,7 +521,7 @@
       "TriggerName": ""
     },
     {
-      "BossChance": 100,
+      "BossChance": 40,
       "BossDifficult": "normal",
       "BossEscortAmount": "1",
       "BossEscortDifficult": "normal",
@@ -559,6 +559,47 @@
         },
         {
           "BossEscortType": "followerGluharScout",
+          "BossEscortDifficult": [
+            "normal"
+          ],
+          "BossEscortAmount": "1"
+        }
+      ],
+      "Time": -1,
+      "TriggerId": "",
+      "TriggerName": ""
+    },
+    {
+      "BossChance": 40,
+      "BossDifficult": "normal",
+      "BossEscortAmount": "0",
+      "BossEscortDifficult": "normal",
+      "BossEscortType": "exUsec",
+      "BossName": "sectantPredvestnik",
+      "BossPlayer": false,
+      "BossZone": "Zone_Hellicopter",
+      "Delay": 0,
+      "DependKarma": false,
+      "DependKarmaPVE": false,
+      "ForceSpawn": false,
+      "IgnoreMaxBots": true,
+      "RandomTimeSpawn": false,
+      "ShowOnTarkovMap": false,
+      "ShowOnTarkovMapPvE": false,
+      "SpawnMode": [
+        "pve",
+        "regular"
+      ],
+      "Supports": [
+        {
+          "BossEscortType": "sectantOni",
+          "BossEscortDifficult": [
+            "normal"
+          ],
+          "BossEscortAmount": "1"
+        },
+        {
+          "BossEscortType": "sectantPrizrak",
           "BossEscortDifficult": [
             "normal"
           ],

@@ -10,6 +10,8 @@
     <EmbeddedResource Include="Resources/manimal_lighthouse_keeper.bundle" LogicalName="Manimal.Lighthouse.Keeper.bundle" />
     <EmbeddedResource Include="Resources/legacy-quest-triggers.json" LogicalName="Manimal.Lighthouse.LegacyQuestTriggers.json" />
     <EmbeddedResource Include="Resources/keeper-restore.json" LogicalName="Manimal.Lighthouse.Keeper.json" />
+    <EmbeddedResource Include="Resources/grass-seasons.json" LogicalName="Manimal.Lighthouse.GrassSeasons.json" />
+    <EmbeddedResource Include="Resources/manimal_lighthouse_seasons.bundle" LogicalName="Manimal.Lighthouse.Seasons.bundle" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Verification/**/*.cs" />
@@ -50,6 +52,10 @@
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>$(GameManaged)/Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Sirenix.Serialization">
+      <HintPath>$(GameManaged)/Sirenix.Serialization.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Comfort">

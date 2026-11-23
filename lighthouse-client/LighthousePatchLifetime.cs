@@ -160,6 +160,8 @@ internal static class LighthousePatchLifetime
             Add(new Patches.FrameStats.OnGameStartedPatch());
             Add(new Patches.Culling.CrossSceneSamplerStartPatch());
             Add(new Patches.Ambience.InitPatch());
+            Add(new Patches.Seasons.RunPatch());
+        Add(new Patches.NightBoss.ConstructorPatch());
 
             // Both of these families are discovered at runtime and retain
             // their own patch instances so every owner can be disabled again.
